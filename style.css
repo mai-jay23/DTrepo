@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Lato",sans-serif;
+}
+
+h1{
+    color:blue;
+    text-align: center;
+}
+
+h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+ul {
+    list-style: none;
+    
+}
+li {
+    margin: 0;
+    
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: white;
+    border-bottom: 2px white solid;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+.container {
+    font-weight: bold;
+    font-size: 50px;
+    margin: auto ;
+    background-color: aqua;
+    text-align: center;
+}
+ nav ul {
+    gap: 30px;
+    display: flex;
+    justify-content: center;
+ }
+.nav {
+    font-size: 20px;
+    display: flex;
+    padding: 20px;
+    margin-bottom: 16px;
+    background-color: darkkhaki;
+    text-align: center;
+    justify-content: center;
+}
+
+
+p{
+    font-size: 17px;
+    line-height: 1.8rem;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    background-color: aqua;
+
+}
+.intro {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.intro img{
+    height: 150px;
+    width: auto;
+    display: inline-block;
+
+
+}
+
+#name h1 {
+    color:black;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.empty {
+    margin:100px;
+}
+
+#stack {
+    text-align: center;
+    padding: 15px;
+
+}
+.card img {
+     width: 100%;
+    height: auto; 
+  object-fit: cover;
+}
+
+.cards {
+    margin: 18px 10px 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 150px); 
+    gap: 20px;
+    justify-content: center; 
+
+}
+
+.card {
+    border: 1px solid black;
+    transition: transform 0.2s ease-in;
+    padding-top: 30px;
+    width: 150px;
+    text-align: center;
+    
+}
+
+.card:hover {
+    transform: translateY(-15px);
+}

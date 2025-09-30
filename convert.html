@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+    <style>
+        body {  
+            text-align: center;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        h1 {
+            font-size: bold;
+            color: aqua;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Celsius to Fahrenheit Converter</h1>
+    <input type="number" id="temp" placeholder="Enter °C">
+    <button  onclick="processor()">convert</button>
+    
+    <script>
+        function processor (){
+            let C=document.getElementById("temp").value;
+            C = parseFloat (C);
+            let F = (C * 9 / 5) + 32;
+            console.log ( `${C}°C = ${F}°F`);
+            alert(`${C}°C = ${F}°F`);
+
+        }
+    </script>
+</body>
+</html>
