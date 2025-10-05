@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: aqua;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        h1 {
+            color:chocolate;
+        }
+        h3 {
+            color: darkgreen;
+        }
+        button {
+            border : 2px solid black;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: yellow;
+
+        }
+    </style>
+</head>
+<body>
+    <h1> Numer Guessing Game</h1>
+    <p> Guess the secret number! <span> and <strong>win</strong> the game</span></p>
+    <input type="number" id="num" placeholder="Enter a number!"><br>
+    <button onclick="gameMechanics()">Enter</button>
+    <h3 id="guess"></h3>
+    <h3 id="game"></h3>
+
+
+    <script>
+        let num=[0,1,2,3,4,5,6,7,8,9,10];
+        let game=document.getElementById("game");
+        let userGuess=document.getElementById("guess");
+        
+       const gameMechanics=()=>{
+             let g = parseInt(document.getElementById("num").value);
+             let found = false;
+             
+             for (let i=0;i<num.length;i++) {
+                if (g===num[i]){
+                    let index = i + 1;
+                    guess.innerText= ` Data at index: ${index}`;
+                    game.innerText="Data : Data is located!"
+                   found =true;
+                   break;
+                } 
+             } if (!found) {
+               game.innerText = "Data is not found!"
+               guess.innerText ="";
+           } 
+            return false;
+                
+        }
+       
+       
+
+    </script>
+    
+</body>
+</html>

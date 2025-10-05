@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Grade Calculator</h1>
+    <label for="project">Project</label><br>
+    <input type="number" id="project"><br>
+    <label for="quiz">Quiz</label><br>
+    <input type="number" id="quiz"><br>
+    <label for="midterm">Midterm</label><br>
+    <input type="number" id="midterm"><br>
+    <label for="finals" >Finals</label><br>
+    <input type="number" id="finals"><br>
+    <label for="activities">Activities</label><br>
+    <input type="number" id="activities"> <br>
+    <div style="margin: 20px;"></div>
+    <button id="scores" onclick="average()" > submit</button><br>
+    <h2 id="average"> </h2>
+    <h2 id="remark"> </h2>
+
+    <script>
+        const Calculator=()=>{
+            let p= parseFloat(document.getElementById("project").value) || 0;
+            let q = parseFloat(document.getElementById("quiz").value)  || 0;
+            let m = parseFloat( document.getElementById("midterm").value)  || 0;
+            let f = parseFloat(document.getElementById("finals").value)  || 0;
+            let a = parseFloat(document.getElementById("activities").value)  || 0;
+            let calc = (p * 0.20) + (q * 0.10) + (m * 0.25) + (f * 0.30) + (a * 0.15);
+            return calc
+        }
+         
+    const average=()=>{
+        const grade = Calculator();
+        document.getElementById("average").innerText=`Average : ${grade.toFixed(2)}%`;
+        let remarks = "";
+        switch (true) {
+
+            
+            case (grade >= 94):
+
+                remarks = "Excellent";
+                break;
+            case ( grade >=85):
+                remarks= "Very Good"
+                break;
+            case (grade>=75):
+                remarks ="Good"
+                break;
+            default:
+                remarks = "Failed ";
+        }
+
+        document.getElementById("remark").innerText = `Remarks: ${remarks}`;
+    };
+    
+
+   
+
+
+
+    </script>
+</body>
+</html>
