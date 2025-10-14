@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Table</title>
+    <link rel="stylesheet" href="dbStyle.css">
+</head>
+
+<body>
+    <h1>Student Information Table</h1>
+    <div class="container">
+        <table border="1" id="studentTable">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody ></tbody>
+        </table>
+    </div>
+<button id="clearTable" class="btn">Clear All Records</button>
+    
+
+    
+
+    <script>
+       const tableBody = document.querySelector('#studentTable tbody');
+       const clearBtn = document.getElementById('clearTable');
+
+        // get students data 
+        const students = JSON.parse(localStorage.getItem('students')) || [];
+
+        students.forEach(student => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                     <td>${student.firstname}</td>
+                     <td>${student.middlename}</td>
+                     <td>${student.lastname}</td>
+                     <td>${student.phone}</td>
+                      <td>${student.address}</td>
+                     `;
+            tableBody.appendChild(row);
+                    });
+        //  to clear existing records 
+        clearBtn.addEventListener('click', () => {
+                if (confirm("Are you sure you want to clear all student records?")) {
+                    localStorage.removeItem('students'); // clear from localStorage
+                    tableBody.innerHTML = ''; // clear the table rows
+                }
+                });
+        
+    </script>
+</body>
+
+</html>
